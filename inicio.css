@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+/*****tarjeta*****/
+#card {
+   height:500px;
+   width:800px;
+   margin:5em auto;
+   position: fixed;
+  top: -10px;
+   left: 35%;
+   display:flex;
+   visibility:hidden;
+}
+#card h2 {
+  font-size: 2em;
+  margin: 1cm 1cm 1cm; /* 1 cm de margen superior y 0 para los márgenes derecho e izquierdo */
+  color: rgb(168, 33, 143);
+  text-align: center;
+}
+
+#card p {
+   font-size: 1.9em;
+   text-align: justify;
+   padding-left: 20px; /* Espacio en blanco a la izquierda */
+   padding-right: 9px; /* Espacio en blanco a la derecha */
+   line-height: 0.9; /* Ajusta según sea necesario */
+}
+
+
+.side {
+   background:#f6f6ed;
+   height:550px;
+   width:400px;
+   border:1px solid rgba(8, 2, 2, 0.618); 
+   padding:2px;
+}
+.side.one {
+
+   width:320px;
+   transform:skew(10deg,20deg);
+   background:linear-gradient(90deg, #ebdddd, #f6eded 40%, #706969);
+}
+.side.two {
+
+   transform:skew(10deg,-16deg);
+   background:linear-gradient(-90deg, #fff, #f4f4f4 40%, #9a8d8d);
+}
+
+/* Reducir el espacio entre h2 y p dentro de .side.two */
+.side.two h2 {
+  margin-bottom: 0.1em; /* Ajusta según sea necesario */
+}
+
+
+/*******cuerpo*******/
+
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   font-family: 'Sacramento', cursive;
+   background: linear-gradient(to bottom, #480e3c, #ff6ec4 );
+   overflow: hidden;
+ }
+ 
+ .valentines-day {
+   position: relative;
+   cursor: pointer;
+ }
+ 
+ .envelope {
+   position: relative;
+   filter: drop-shadow(0 0 35px rgba(0,0,0,.3));
+ }
+ 
+ .envelope:before {
+   content:"";
+   position: absolute;
+   width:254px;
+   height:254px;
+   background-color: #ff9494;
+   transform: rotate(-45deg);
+   border-radius: 0 15px 0 0;
+   left:-37px;
+   top:-82px;
+ }
+ 
+ .envelope:after {
+   content:"";
+   position: absolute;
+   background-color: #ff9494;
+   width:360px;
+   height:225px;
+   left:-90px;
+   top:45px;
+ }
+ 
+ .cora {
+   position: relative;
+   background-color: #e01911;
+   display: inline-block;
+   height: 180px;
+   top:50px;
+   left:0;
+   transform: rotate(-45deg);
+   width:180px;
+   filter: drop-shadow(0 -10px 35px rgba(0, 0, 0, 0.384));
+   transition: .5s;
+ }
+   
+ .cora:before, .cora:after {
+   content:"";
+   background-color: #e01911;
+   border-radius:50%;
+   height: 180px;
+   width: 180px;
+   position: absolute;
+   }
+   
+ .cora:before {
+   top:-100px;
+   left:0;}
+   
+ .cora:after {
+   left:100px;
+   top:0;}
+ 
+ .front {
+   position: absolute;
+   width:0;
+   height:0;
+   border-right: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top:44px;
+   left:80px;
+   z-index:4;
+ }
+ 
+ .front:before {
+   content:"";
+   position: absolute;
+   width:0;
+   height:0;
+   border-left: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top:-113px;
+   left:-170px;
+ }
+ 
+ .front:after {
+   width:0;
+   height:0;
+   position: absolute;
+   content:"";
+   border-bottom: 150px solid #fce7e9;
+   border-right:180px solid transparent;
+   border-left: 180px solid transparent;
+   top:-36px;
+   left:-170px;
+ }
+ 
+ .text {
+  text-shadow: 0 0 9px black; /* Ajusta el valor del desenfoque según lo necesites */
+   position: absolute;
+   
+   letter-spacing:0px;
+   text-align: center;
+   color: rgb(255, 255, 255);
+   z-index:2;
+   top:80px;
+   left: -7px;
+   font-size: calc(10px + 100%);
+   transition: .5s;
+   font-family: "sacramento", cursive; /* Fuente del texto */
+ }
+ 
+ /*.valentines-day:hover .cora {
+   transform: translateY(-50px) rotate(-45deg);
+ }*/ 
+
+ .valentines-day:hover .cora {
+  transform: translateY(-69px) rotate(-45deg); /* Mover el corazón 2 cm más arriba */
+}
+
+ 
+ .valentines-day:hover .text {
+   transform: translateY(-83px);
+ }
+
+body{
+	background: fff;
+  margin: 0px;
+  background: linear-gradient(to bottom, #470939, #ff6ec4);
+ 
+}
+
+.botones-container {
+  text-align: center;
+}
+.botones-container a {
+  display: inline-block;
+  margin: 0 10px; /* Ajusta el margen horizontal según sea necesario */
+  display: inline-block;
+  margin: 0 10px; /* Ajusta el margen horizontal según sea necesario */
+  color: black; /* Color del texto */
+  text-decoration: none; /* Quitar el subrayado */
+}
+
+
+
+img{
+	height: 60px;
+}
+
+/********************************card responsiv*********************************/
+
+@media only screen and (max-width: 768px) {
+  /* Modifica el tamaño de la tarjeta para pantallas pequeñas */
+  #card {
+    height: 300px; /* Reducir la altura */
+    width: 500px; /* Reducir el ancho */
+    top: 0; /* Eliminar el desplazamiento hacia arriba */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%);
+    margin: 2em auto; /* Ajustar el margen */
+    position: relative; /* Cambiar la posición a relativa */
+  }
+
+  /* Modifica el tamaño del título para pantallas pequeñas */
+  #card h2 {
+    font-size: 2em; /* Reducir el tamaño del texto */
+    margin-top: 20px; /* Ajustar el margen superior */
+  }
+
+  /* Modifica el tamaño del párrafo para pantallas pequeñas */
+  #card p {
+    font-size: 1.5em; /* Reducir el tamaño del texto */
+  }
+
+  /* Modifica el tamaño de los lados de la tarjeta para pantallas pequeñas */
+  .side {
+    height: 300px; /* Reducir la altura */
+    width: 250px; /* Reducir el ancho */
+  }
+}
+
+
+
+
+/*****************************************************************************/
+
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  margin: 0px;
+  font-size: 0px;
+  padding: 0px;
+}
+
+.col{
+  display:inline-block;
+  width: 19%;
+}
+
+.heart{
+  /*content*/
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 120vh;
+  z-index:-1;
+}
+
+.circle{
+  /*circle2*/
+  width:90px;
+  height:90px;
+  content:'';
+  background-color: crimson;
+  position: absolute;
+  margin: 35px 0px 0px 30px;
+  transform: rotate(-135deg);
+}
+
+.circle::after{
+  /*square*/
+  width: 90px;
+  height: 90px;
+  content:'';
+  background-color: crimson;
+  border-radius: 45px;
+  position: absolute;
+  margin: 44px 0px;
+}
+
+.circle::before{
+  /*circle1*/
+  width: 90px;
+  height: 90px;    
+  content:'';
+  background-color: crimson;
+  position: absolute;
+  z-index: 1;
+  margin: 0px 44px;
+  border-radius: 45px;
+}
+
+/******************************/
+.heart.heart1 .circle{
+  animation: 12s colors infinite;
+  animation-delay: 0s;
+}
+.heart.heart1 .circle::before{
+  animation: 12s colors infinite;
+  animation-delay: 0s;
+}
+.heart.heart1 .circle::after{
+  animation: 12s colors infinite;
+  animation-delay: 0s;
+}
+
+
+.heart.heart2 .circle{
+  animation: 12s colors infinite;
+  animation-delay: 2s;
+}
+.heart.heart2 .circle::before{
+  animation: 12s colors infinite;
+  animation-delay: 2s;
+}
+.heart.heart2 .circle::after{
+  animation: 12s colors infinite;
+  animation-delay: 2s;
+}
+
+.heart.heart3 .circle{
+  animation: 12s colors infinite;
+  animation-delay: 4s;
+}
+.heart.heart3 .circle::before{
+  animation: 12s colors infinite;
+  animation-delay: 4s;
+}
+.heart.heart3 .circle::after{
+  animation: 12s colors infinite;
+  animation-delay: 4s;
+}
+
+.heart.heart4 .circle{
+  animation: 12s colors infinite;
+  animation-delay: 6s;
+}
+.heart.heart4 .circle::before{
+  animation: 12s colors infinite;
+  animation-delay: 6s;
+}
+.heart.heart4 .circle::after{
+  animation: 12s colors infinite;
+  animation-delay: 6s;
+}
+
+.heart.heart5 .circle{
+  animation: 12s colors infinite;
+  animation-delay: 5s;
+}
+.heart.heart5 .circle::before{
+  animation: 12s colors infinite;
+  animation-delay: 5s;
+}
+.heart.heart5 .circle::after{
+  animation: 12s colors infinite;
+  animation-delay: 5s;
+}
+
+
+@keyframes colors{
+  0%{     
+     background-color: #b30000;
+  }
+  25%{
+    background-color: #3bacd5;
+  }
+  50%{
+    background-color: #ff1a9f;
+  }
+  75%{
+    background-color: #f3d127;
+  }
+  80%{
+    background-color: #2ecd43;
+
+  }
+  100%{
+    background-color: #b30000;
+  }
+}
+/******************************/
+.halfMoon{
+  background: transparent;
+  height: 90px;
+  width: 45px;
+  position: absolute;
+  border-radius: 76px 0px 0px 0px;
+  margin: 82px 81px;
+  transform: rotate(45deg);
+}
+.halfMoon::before{
+  background: linear-gradient(to bottom, #58094700, #ff6ec500);
+  height: 90px;
+  width: 45px;
+  border-radius: 76px 0px 0px 0px;
+  content: '';
+  position: absolute;
+  margin: 45px -40px;
+  transform: rotate(78.5deg);
+}
+
+.halfMoon::after{
+  background: linear-gradient(to bottom, #58094700, #ff6ec500);
+  height: 90px;
+  width: 45px;
+  border-radius: 0px 0px 0px 76px;  
+  content: '';
+  margin: 3px 7px;
+  position: absolute;  
+  transform: rotate(369deg);
+}
+
+.heart1{
+  animation: 20s Linear-motion infinite,MoveLeft 23s infinite;
+  animation-delay: 5s;
+}
+
+.heart2{
+  animation: 12s Linear-motion infinite, MoveLeft 15s infinite;
+  animation-delay: 1s;
+}
+
+.heart3{
+  animation: 12s Linear-motion infinite, MoveLeft 15s infinite;
+  animation-delay: 18s;
+}
+
+.heart4{
+  animation: 16s Linear-motion infinite, MoveLeft 19s infinite;
+  animation-delay: 11s;
+}
+
+.heart5{
+  animation: 15s Linear-motion infinite, MoveLeft 18s infinite;
+  animation-delay: 5s;
+}
+
+@keyframes Linear-motion{
+  0%{     
+    top:100vh;
+  }
+  100%{
+    top:-20vh;
+  }
+}
+
+@keyframes MoveLeft{
+  0%{
+    margin-left: 0%;
+  }
+  50%{
+    margin-left:50%;
+  }
+  100%{
+    margin-left: 0%;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Estilos para los contenedores de los botones */
+
+.botones-container {
+  text-shadow: 0 0 2vw black; /* Ajusta el valor del desenfoque según lo necesites */
+
+  position: absolute;
+  bottom: 5%; /* Coloca los botones cerca del pie de página */
+  left: 50%; /* Centra horizontalmente los botones */
+  transform: translateX(-50%); /* Ajusta el centrado horizontal */
+  font-size: 2vw; /* Tamaño de la letra relativo al ancho de la ventana */
+  display: flex; /* Utiliza un contenedor flexible para los botones */
+  flex-direction: row; /* Coloca los elementos en una fila por defecto */
+  align-items: center; /* Alinea los elementos al centro */
+  overflow-x: auto; /* Añade una barra de desplazamiento horizontal cuando los botones no quepan */
+  white-space: nowrap; /* Evita que los botones se desplacen a la siguiente línea */
+  z-index: 9999; /* Asegura que los botones estén por encima de otros elementos */
+}
+
+.botones-scroll {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/***********botones*******************/
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1vw); /* Flota un 2% del ancho de la ventana */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.botones-container a {
+  text-shadow: 0 0 2vw black; /* Ajusta el valor del desenfoque según lo necesites */
+
+  display: inline-block; /* Hace que el enlace se comporte como un bloque */
+  width: 10vw; /* Ancho del botón relativo al ancho de la ventana */
+  height: 10vw; /* Alto del botón relativo al ancho de la ventana */
+  background-size: contain; /* Ajusta el tamaño de la imagen para que quepa completamente dentro del botón */
+  background-position: center; /* Centra la imagen dentro del botón */
+  z-index: 9999;
+  border: none;
+  margin: 1vw; /* Separación de 1% del ancho de la ventana */
+  transform: scale(1); /* Ajusta la escala de los botones */
+  position: relative;
+  animation: float 3s infinite; /* Aplica la animación de flotación */
+}
+
+/* Establece la imagen para cada botón */
+.botones-container a:nth-child(1) {
+
+
+  background-image: url('/dist/img/1.png'); /* Imagen para el primer botón */
+}
+
+.botones-container a:nth-child(2) {
+  background-image: url('/dist/img/2.png'); /* Imagen para el segundo botón */
+}
+
+.botones-container a:nth-child(3) {
+  background-image: url('/dist/img/4.png'); /* Imagen para el tercer botón */
+}
+
+.botones-container a:nth-child(4) {
+  background-image: url('/dist/img/3.png'); /* Imagen para el cuarto botón */
+}
+
+.botones-container a:nth-child(5) {
+  background-image: url('/dist/img/5.png'); /* Imagen para el quinto botón */
+}
+
+.botones-container a:hover {
+  animation: destello 0.8s linear infinite alternate; /* Aplica la animación de destello al pasar el cursor sobre el botón */
+}
+
+@keyframes destello {
+  0% {
+    opacity: 1; /* Botón completamente visible */
+  }
+  50% {
+    opacity: 0.5; /* Botón parcialmente transparente */
+  }
+  100% {
+    opacity: 1; /* Botón completamente visible */
+  }
+}
+
+/* Establece la posición de los botones en dispositivos pequeños */
+@media only screen and (max-width: 768px) {
+  .botones-container {
+    flex-direction: column; /* Coloca los elementos en una columna */
+    bottom: 10%; /* Coloca los botones cerca del pie de página */
+    width: 100%; /* Ajusta el ancho al 100% para ocupar todo el ancho disponible */
+  }
+  
+  .botones-container a {
+    width: 25vw; /* Ancho del botón relativo al ancho de la ventana */
+    height: 25vw; /* Alto del botón relativo al ancho de la ventana */
+  }
+}
+
+/*********mensaje de accion *******/
+
+  /* Estilos para el mensaje llamativo */
+  .call-to-action {
+    font-size: 28px;
+    color: #d4d419;
+    background-color: #0400ff00;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    position: absolute; /* Cambiamos a posición absoluta */
+    left: 0cm; /* Movemos 10 cm a la izquierda */
+    margin-top: -360px; /* Movemos 20px hacia arriba */  
+  }
+
+/* Estilos para el footer */
+footer {
+  text-shadow: 0 0 2vw black; /* Ajusta el valor del desenfoque según lo necesites */
+  background-image: linear-gradient(to bottom, #c2269161, #ca15bb); /* Gradiente hacia abajo desde rosa pastel a blanco */
+  color: #000000; /* Color del texto blanco */
+  padding: 2vw; /* Espaciado interno */
+  display: flex; /* Usar flexbox para alinear los elementos */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  position: fixed; /* Fijar el pie de página en la parte inferior */
+  width: 100%; /* Ancho completo */
+  bottom: 0; /* Colocar en la parte inferior */
+  font-family: "Arial", sans-serif; /* Fuente del texto */
+  font-size: 1.1vw; /* Tamaño del texto relativo al ancho de la ventana */
+  z-index: 999; /* Asegura que el footer esté por debajo de los botones */
+}
+
+.logo {
+  margin-right: 2vw; /* Espaciado a la derecha del logo relativo al ancho de la ventana */
+}
+
+.logo img {
+  width: 10vw; /* Ajustar el tamaño del logo según el ancho de la ventana */
+  height: auto;
+}
+
+footer p {
+  margin: 0; /* Eliminar el margen predeterminado del párrafo */
+}
+
+/* Estilo para el enlace */
+footer a {
+  color: #ffd700; /* Color del enlace amarillo */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo para el enlace al pasar el mouse */
+footer a:hover {
+  color: #fff; /* Cambiar el color del enlace al pasar el mouse */
+}
+
+/* Estilo para el símbolo de copyright */
+footer span {
+  font-weight: bold; /* Negrita */
+}
+
+/* Estilos adicionales para dispositivos pequeños */
+@media only screen and (max-width: 768px) {
+  footer {
+    bottom: 2%; /* Posición del footer más cerca del borde inferior */
+  }
+}
+
+
+/* Estilos para la etiqueta en la parte superior navbar */
+.revisar-corazon {
+  position: absolute; /* Cambiamos a posición absoluta */
+  top: 900px;
+  left: 50%;
+  transform: translateX(-50%) scale(2.8); /* Aumenta el tamaño en un 80% */
+  font-style: italic;
+  background: linear-gradient(to bottom, #580947);
+  white-space: nowrap; /* Evita que el texto se desborde */
+  overflow: hidden; /* Oculta el texto que se desborde */
+  animation: escribir 8s steps(30, end), destello 2.5s infinite alternate; /* Aplica la animación de escritura y destello */
+  max-width: 100%; /* Utilizamos max-width en lugar de width */
+}
+
+
+
+
+/**********************/
+.navbar {
+  text-shadow: 0 0 2vw black; /* Ajusta el valor del desenfoque según lo necesites */
+  background-image: linear-gradient(to bottom, #c22691, #ca15bb27); /* Gradiente hacia abajo desde rosa pastel a blanco */
+  padding: 2vw;
+  position: fixed; /* Fijar el navbar en la parte superior */
+  width: 100%; /* Ancho completo del navbar */
+  height: 30px; /* Reducir la altura del pie de página a 30px */
+  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+  top: 0; /* Colocar en la parte superior de la pantalla */
+  display: flex; /* Establecer como contenedor flexible */
+  align-items: center; /* Centrar los elementos verticalmente */
+}
+
+.navbar .logo img {
+  width: 10vw; /* Ajustar el tamaño del logo según el ancho de la ventana */
+  height: auto;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 2vw; /* Espaciado derecho relativo al ancho de la ventana */
+}
+
+.navbar ul li:last-child {
+  margin-right: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #d3d01c; /* Color del texto blanco */
+  font-weight: bold;
+  font-size: 2.5vw; /* Tamaño de fuente relativo al ancho de la ventana */
+  transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+.navbar ul li a:hover {
+  color: #000000; /* Cambiar el color del texto al pasar el mouse */
+}
+
+/* Ajustar el contenido debajo del navbar */
+.content {
+  margin-top: 8vw; /* Ajustar según el tamaño del navbar */
+}
+
+
+
+
+/***pie de pagina **/
+/***pie de pagina **/
+
+footer {
+  text-shadow: 0 0 2vw black; /* Ajusta el valor del desenfoque según lo necesites */
+  background-image: linear-gradient(to bottom, #ca15bb27, #ca15bb); /* Gradiente hacia abajo desde rosa pastel a blanco */
+  color: #000000; /* Color del texto blanco */
+  padding: 2vw; /* Espaciado interno */
+  display: flex; /* Usar flexbox para alinear los elementos */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  position: fixed; /* Fijar el pie de página en la parte inferior */
+  width: 100%; /* Ancho completo */
+  height: 30px; /* Reducir la altura del pie de página a 30px */
+  bottom: 0; /* Colocar en la parte inferior */
+  font-family: "Arial", sans-serif; /* Fuente del texto */
+  font-size: 1.5vw; /* Tamaño del texto relativo al ancho de la ventana */
+}
+
+.logo {
+  margin-right: 2vw; /* Espaciado a la derecha del logo relativo al ancho de la ventana */
+}
+
+.logo img {
+  width: 5vw; /* Ajustar el tamaño del logo según el ancho de la ventana */
+  height: auto;
+}
+
+footer p {
+  margin: 0; /* Eliminar el margen predeterminado del párrafo */
+}
+
+/* Estilo para el enlace */
+footer a {
+  color: #ffd700; /* Color del enlace amarillo */
+  text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo para el enlace al pasar el mouse */
+footer a:hover {
+  color: #fff; /* Cambiar el color del enlace al pasar el mouse */
+}
+
+/* Estilo para el símbolo de copyright */
+footer span {
+  font-weight: bold; /* Negrita */
+
+  
+}
+/****esponsive**/
+
+/* Media queries para ajustes en diferentes tamaños de pantalla */
+@media screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
